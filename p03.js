@@ -1,5 +1,5 @@
 /* Made by Darin Croft */
-var flashcards = ["temp"];
+var flashcards = [];
 var index = 0;
 
 function create(){  //creates a single flashcard at a time
@@ -16,13 +16,16 @@ function create(){  //creates a single flashcard at a time
     tmp = tmp + "no";
     console.log(tmp);
     flashcards.push(tmp);}
-  index++;}
+  index++;
+  document.getElementById("question").value = "";
+  document.getElementById("answer").value = "";
+  }
 }
 
 function save(){  //saves all of the flashcards as a string and stores in a cookie
-  console.log("before save~");
   var flashcardstring = flashcards.toString();
   setCookie("yourlist", flashcardstring, 1);
+  setCookie("yourindex", index, 1);
   console.log(getCookie("yourlist"));
 }
 
