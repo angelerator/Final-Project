@@ -1,0 +1,19 @@
+/* Made by Darin Croft */
+body{
+  background-color: #FFCC99;
+}
+.flashcarddiv {
+    background-color: #FFFFFF;
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    border: 3px solid green;
+    padding: 30px;
+    transform: translate(0, 50%);
+    font-size: 18px;
+    font-family: Tahoma, Geneva, sans-serif;
+
+}
+.float {
+
+}
