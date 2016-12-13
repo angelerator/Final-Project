@@ -19,34 +19,33 @@ function create(){  //creates a single flashcard at a time
   //index++;
   document.getElementById("question").value = "";
   document.getElementById("answer").value = "";
+  document.getElementById("nextpageB").disabled = false;
   }
 }
 
 function save(){  //saves all of the flashcards as a string and stores in a cookie
   var flashcardstring = flashcards.toString();
   setCookie("yourlist", flashcardstring, 1);
-  //setCookie("yourindex", index, 1);
   console.log(getCookie("yourlist"));
 }
 
-function move_on(){
+function move_on(){ //all this function does is allow the HTML button it's attached to to call save and move to the next page
   save();
   window.location.href='cards.html';
 }
 
-function showcard(){
+function showcard(){  //displays the flashcard question and answer on the page
   var tmparray = flashcards[index].split(".");
   console.log(tmparray.toString());
   if(tmparray[2] == "no"){
     document.getElementById("top").innerHTML = tmparray[0];
   }
-  else{
+  else if(tmparray[2] == "yes"){
     document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
   }
-  index++;
 }
 
-function loadcards(){
+function loadcards(){ //this function just loads the flashcards from your cookies and then calls showcard()
   console.log("hi");
   var yourcookie = getCookie("yourlist");
   var arrayCookie = [];
@@ -56,6 +55,18 @@ function loadcards(){
   }
   console.log(flashcards.toString());
   showcard();
+}
+
+function checkanswer(){
+  var tmparray = flashcards[index].split(".");
+  var tmp = document.getElementById("bottom").value;
+  console.log("hoi");
+  if(tmp == tmparray[1]){
+    document.getElementById("error").innerHTML = 'Correct! Please press "Next Card"';
+  }
+  else{
+    document.getElementById("error").innerHTML = "You answer is incorrect. Try again.";
+  }
 }
 
 
