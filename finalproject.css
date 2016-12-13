@@ -3,8 +3,8 @@ body{
   background-color: #FFCC99;
 }
 .error{
-  color: grey !important;
-  font-style: italic !important;
+  color: grey;
+  font-style: italic;
 }
 
 .flashcarddiv {
