@@ -43,6 +43,7 @@ function showcard(){
   else{
     document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
   }
+  index++;
 }
 
 function loadcards(){
@@ -56,6 +57,7 @@ function loadcards(){
   console.log(flashcards.toString());
   showcard();
 }
+
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
