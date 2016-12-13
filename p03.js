@@ -47,6 +47,8 @@ function showcard(prevquestion){  //displays the flashcard question and answer o
   }
   else{
     index++;
+    document.getElementById("error").innerHTML = "<br>";
+    document.getElementById("bottom").value = "";
     showcard(false);
   }
 }
