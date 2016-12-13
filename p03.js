@@ -6,7 +6,7 @@ function create(){  //creates a single flashcard at a time
   var question = document.getElementById("question").value;
   var answer = document.getElementById("answer").value;
   var check = document.getElementById("ifimage").checked;
-  var tmp = question + "." + answer + ".";
+  var tmp = question + "#" + answer + "#";
   if(question && answer){
   if(check){
     tmp = tmp + "yes";
@@ -36,7 +36,7 @@ function move_on(){ //all this function does is allow the HTML button it's attac
 
 function showcard(prevquestion){  //displays the flashcard question and answer on the page
   if(!prevquestion){  //the parameter "prevquestion" is just a boolean to see if the user got the last question correct (or if there even was a last question)
-    var tmparray = flashcards[index].split(".");
+    var tmparray = flashcards[index].split("#");
     console.log(tmparray.toString());
     if(tmparray[2] == "no"){
       document.getElementById("top").innerHTML = tmparray[0];
@@ -66,7 +66,7 @@ function loadcards(){ //this function just loads the flashcards from your cookie
 }
 
 function checkanswer(){
-  var tmparray = flashcards[index].split(".");
+  var tmparray = flashcards[index].split("#");
   var tmp = document.getElementById("bottom").value;
   console.log("hoi");
   if(tmp == tmparray[1]){
