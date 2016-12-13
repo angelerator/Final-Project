@@ -37,7 +37,12 @@ function move_on(){
 function showcard(){
   var tmparray = flashcards[index].split(".");
   console.log(tmparray.toString());
-
+  if(tmparray[2] == "no"){
+    document.getElementById("top").innerHTML = tmparray[0];
+  }
+  else{
+    document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
+  }
 }
 
 function loadcards(){
