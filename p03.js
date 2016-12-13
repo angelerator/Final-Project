@@ -42,7 +42,7 @@ function showcard(prevquestion){  //displays the flashcard question and answer o
       document.getElementById("top").innerHTML = tmparray[0];
     }
     else if(tmparray[2] == "yes"){
-      document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:300px'>";
+      document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
     }
   }
   else{
