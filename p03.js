@@ -16,7 +16,7 @@ function create(){  //creates a single flashcard at a time
     tmp = tmp + "no";
     console.log(tmp);
     flashcards.push(tmp);}
-  index++;
+  //index++;
   document.getElementById("question").value = "";
   document.getElementById("answer").value = "";
   }
@@ -25,7 +25,7 @@ function create(){  //creates a single flashcard at a time
 function save(){  //saves all of the flashcards as a string and stores in a cookie
   var flashcardstring = flashcards.toString();
   setCookie("yourlist", flashcardstring, 1);
-  setCookie("yourindex", index, 1);
+  //setCookie("yourindex", index, 1);
   console.log(getCookie("yourlist"));
 }
 
@@ -34,8 +34,22 @@ function move_on(){
   window.location.href='cards.html';
 }
 
+function showcard(){
+  var tmparray = flashcards[index].split(".");
+  console.log(tmparray.toString());
+
+}
+
 function loadcards(){
   console.log("hi");
+  var yourcookie = getCookie("yourlist");
+  var arrayCookie = [];
+  arrayCookie = yourcookie.split(",");
+  for(var i=0; i<arrayCookie.length; i++){
+    flashcards.push(arrayCookie[i]);
+  }
+  console.log(flashcards.toString());
+  showcard();
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
