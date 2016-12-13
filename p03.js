@@ -46,10 +46,14 @@ function showcard(prevquestion){  //displays the flashcard question and answer o
     }
   }
   else{
-    index++;
-    document.getElementById("error").innerHTML = "<br>";
-    document.getElementById("bottom").value = "";
-    showcard(false);
+    if(index == flashcards.length - 1){
+      document.getElementById("error").innerHTML = "You completed your flashcards!";
+    }
+    else{
+      index++;
+      document.getElementById("error").innerHTML = "<br>";
+      document.getElementById("bottom").value = "";
+      showcard(false);
   }
 }
 

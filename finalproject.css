@@ -14,3 +14,7 @@ body{
     height: auto;
     /*transform: translate(0, 50%);*/
 }
+.error{
+  color: grey;
+  font-style: italic;
+}
