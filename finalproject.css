@@ -2,6 +2,11 @@
 body{
   background-color: #FFCC99;
 }
+.error{
+  color: grey;
+  font-style: italic;
+}
+
 .flashcarddiv {
     background-color: #FFFFFF;
     margin: auto;
@@ -13,8 +18,4 @@ body{
     font-family: Tahoma, Geneva, sans-serif;
     height: auto;
     /*transform: translate(0, 50%);*/
-}
-.error{
-  color: grey;
-  font-style: italic;
 }
