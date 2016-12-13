@@ -34,15 +34,19 @@ function move_on(){ //all this function does is allow the HTML button it's attac
   window.location.href='cards.html';
 }
 
-function showcard(){  //displays the flashcard question and answer on the page
-  var tmparray = flashcards[index].split(".");
-  console.log(tmparray.toString());
-  if(tmparray[2] == "no"){
-    document.getElementById("top").innerHTML = tmparray[0];
+function showcard(prevquestion){  //displays the flashcard question and answer on the page
+  if(!prevquestion){  //the parameter "prevquestion" is just a boolean to see if the user got the last question correct (or if there even was a last question)
+    var tmparray = flashcards[index].split(".");
+    console.log(tmparray.toString());
+    if(tmparray[2] == "no"){
+      document.getElementById("top").innerHTML = tmparray[0];
+    }
+    else if(tmparray[2] == "yes"){
+      document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
+    }
   }
-  else if(tmparray[2] == "yes"){
-    document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
-  }
+  index++;
+  showcard(false);
 }
 
 function loadcards(){ //this function just loads the flashcards from your cookies and then calls showcard()
@@ -54,7 +58,7 @@ function loadcards(){ //this function just loads the flashcards from your cookie
     flashcards.push(arrayCookie[i]);
   }
   console.log(flashcards.toString());
-  showcard();
+  showcard(false);
 }
 
 function checkanswer(){
