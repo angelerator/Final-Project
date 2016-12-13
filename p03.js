@@ -45,8 +45,10 @@ function showcard(prevquestion){  //displays the flashcard question and answer o
       document.getElementById("top").innerHTML = "<img src='" + tmparray[0] + "' style='height:400px'>";
     }
   }
-  index++;
-  showcard(false);
+  else{
+    index++;
+    showcard(false);
+  }
 }
 
 function loadcards(){ //this function just loads the flashcards from your cookies and then calls showcard()
